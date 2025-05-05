@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AJAX To-Do List</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    li { margin-bottom: 10px; }
+  </style>
+</head>
+<body>
+  <h2>To-Do List</h2>
+  <input type="text" id="taskInput" placeholder="Enter a task">
+  <button id="addBtn">Add Task</button>
+  <ul id="taskList"></ul>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    function loadTasks() {
+      $.get('/tasks', function(data) {
+        $('#taskList').empty();
+        data.forEach(task => {
+          $('#taskList').append(`
+            <li data-id="${task.id}">
+              <input type="text" value="${task.text}" class="taskText">
+              <button class="updateBtn">Update</button>
+              <button class="deleteBtn">Delete</button>
+            </li>
+          `);
+        });
+      });
+    }
+
+    $(document).ready(function() {
+      loadTasks();
+
+      $('#addBtn').click(function() {
+        const text = $('#taskInput').val();
+        if (text) {
+          $.post('/tasks', { text }, loadTasks);
+          $('#taskInput').val('');
+        }
+      });
+
+      $('#taskList').on('click', '.deleteBtn', function() {
+        const id = $(this).closest('li').data('id');
+        $.ajax({ url: '/tasks/' + id, type: 'DELETE', success: loadTasks });
+      });
+
+      $('#taskList').on('click', '.updateBtn', function() {
+        const li = $(this).closest('li');
+        const id = li.data('id');
+        const newText = li.find('.taskText').val();
+        $.ajax({
+          url: '/tasks/' + id,
+          type: 'PUT',
+          contentType: 'application/json',
+          data: JSON.stringify({ text: newText }),
+          success: loadTasks
+        });
+      });
+    });
+  </script>
+</body>
+</html>

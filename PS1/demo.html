@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family:Arial,sans-serif;
+            margin:0;
+            padding:20px;
+        }
+        table{
+            width:100%;
+            background:#f4f4f4;
+            border-collapse: collapse;
+        }
+        th,td{
+            border: solid 1px #595858;
+            /* padding:8px; */
+        }
+        td{
+            padding-left:8px;
+        }
+        th{
+            background-color: #929090;
+            text-align:center;
+            padding:20px;
+        }
+        #pagination{
+            display:flex;
+            justify-content: center;
+            margin-top:20px;
+            gap:10px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Product Catalog</h1>
+        <table>
+            <tr>
+                <th>Product Image</th>
+                <th>Product Name</th>
+                <th>Price (INR)</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td><img src="" alt="Wireless Headphones"></td>
+                <td><p>Wireless Headphones</p></td>
+                <td>Rs 7,999</td>
+                <td>Noise-cancelling over-ear headphones</td>
+            </tr>
+            <tr>
+                <td><img src="" alt="Smart Watch"></td>
+                <td><p>Smartwatch</p></td>
+                <td>₹12,999</td>
+                <td>Fitness tracking smartwatch.</td>
+            </tr>
+            <tr>
+                <td><img src="" alt="Smart Watch"></td>
+                <td><p>Smartwatch</p></td>
+                <td>₹12,999</td>
+                <td>Fitness tracking smartwatch.</td>
+            </tr>
+        </table>
+    </div>
+    <div id="pagination">
+        <button onclick="PrevPage()">Previous</button>
+        <span>Page 1 of 1</span>
+        <button onclick="NextPage()">Next</button>
+    </div>
+
+    <script>
+        
+        const products = [
+            {
+
+            },
+            {
+
+            },
+            {
+                
+            }
+        ]
+
+        const rowsPerPage = 5;
+        const currentPage = 1;
+        const totalPages = Math.ceil(products.length()/rowsPerPage);
+    </script>
+
+</body>
+</html>

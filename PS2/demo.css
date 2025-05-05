@@ -1,0 +1,26 @@
+*{
+    margin:0;
+    padding:20px;
+    font-family:Arial,sans-serif;
+}
+body{
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+}  
+header{
+    text-align: center;
+    background-color: rgb(26, 26, 26);
+    color:rgb(255, 255, 255);
+    margin-bottom: 20px;
+}
+ul{
+    padding-left: 20px;
+}
+section{
+    margin:auto;
+    border: 0.5px solid;
+    margin-bottom: 20px;
+    max-width:800px;
+    box-shadow: 0 0 10px rgba(140, 140, 140);
+    text-align: left;
+}

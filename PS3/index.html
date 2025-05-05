@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ABC Delights - Restaurant Menu</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff9f5;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    header {
+      background-color: #d35400;
+      color: white;
+      padding: 30px;
+      text-align: center;
+    }
+
+    section {
+      padding: 20px 40px;
+    }
+
+    h2 {
+      color: #e67e22;
+      border-bottom: 2px solid #e67e22;
+      padding-bottom: 5px;
+    }
+
+    ul {
+      list-style: square;
+      padding-left: 20px;
+    }
+
+    .menu-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    .menu-table th, .menu-table td {
+      border: 1px solid #ccc;
+      padding: 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .menu-table th {
+      background-color: #f4d03f;
+    }
+
+    .dish-img {
+      width: 100px;
+      height: 70px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+
+    .dish-name {
+      font-weight: bold;
+      color: #2c3e50;
+    }
+
+    .price {
+      color: green;
+      font-weight: bold;
+    }
+
+    footer {
+      background-color: #d35400;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>ABC Delights - Restaurant Menu</h1>
+</header>
+
+<section>
+  <h2>Welcome to ABC Delights</h2>
+  <p>At ABC Delights, we offer a blend of taste, tradition, and innovation. Our master chefs ensure every dish is crafted with perfection and hygiene.</p>
+  <p><em>"We cook with passion and serve with love." – Chef Aarav</em></p>
+  <p><strong>Food Quality Assurance:</strong> All our ingredients are locally sourced, fresh, and handled with utmost care to ensure premium quality in every bite.</p>
+</section>
+
+<section>
+  <h2>Top Dishes (Most Popular)</h2>
+  <ol>
+    <li>Paneer Tikka</li>
+    <li>Biryani</li>
+    <li>Spring Rolls</li>
+  </ol>
+</section>
+
+<section>
+  <h2>Available Cuisines</h2>
+  <ul>
+    <li>Italian</li>
+    <li>Indian</li>
+    <li>Chinese</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Menu</h2>
+  <table class="menu-table">
+    <thead>
+      <tr>
+        <th>Dish</th>
+        <th>Description</th>
+        <th>Price (INR ₹)</th>
+        <th>Image</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="dish-name">Paneer Tikka</td>
+        <td>Grilled cottage cheese marinated in spices, served with mint chutney.</td>
+        <td class="price">₹250</td>
+        <td><img src="https://www.indianhealthyrecipes.com/wp-content/uploads/2022/06/paneer-tikka-recipe.jpg" alt="Paneer Tikka" class="dish-img"></td>
+      </tr>
+      <tr>
+        <td class="dish-name">Chicken Biryani</td>
+        <td>Flavorful rice cooked with marinated chicken, saffron, and aromatic spices.</td>
+        <td class="price">₹300</td>
+        <td><img src="https://www.indianhealthyrecipes.com/wp-content/uploads/2021/11/chicken-biryani-recipe.jpg" alt="Biryani" class="dish-img"></td>
+      </tr>
+      <tr>
+        <td class="dish-name">Veg Spring Rolls</td>
+        <td>Deep-fried crispy rolls filled with spicy vegetables and noodles.</td>
+        <td class="price">₹180</td>
+        <td><img src="https://www.vegrecipesofindia.com/wp-content/uploads/2013/01/spring-rolls-recipe-1.jpg" alt="Spring Rolls" class="dish-img"></td>
+      </tr>
+      <tr>
+        <td class="dish-name">Pasta Alfredo</td>
+        <td>Italian pasta tossed in creamy Alfredo sauce with herbs and cheese.</td>
+        <td class="price">₹270</td>
+        <td><img src="https://www.simplyrecipes.com/thmb/pfAiNNIMovIV5P7D9Xl1XbDhdmI=/2000x0/filters:no_upscale():max_bytes(150000):strip_icc()/Simply-Recipes-Chicken-Alfredo-LEAD-3-b3db3bd4466c4a87ae37693cf99c465a.jpg" alt="Pasta Alfredo" class="dish-img"></td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<footer>
+  <p>&copy; 2025 ABC Delights. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

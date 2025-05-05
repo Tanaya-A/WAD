@@ -1,0 +1,330 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Product Catalog</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      margin: 0;
+      background-color: #f9f9f9;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    img {
+      width: 80px;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .pagination {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .pagination button {
+      padding: 8px 16px;
+      margin: 0 5px;
+      border: none;
+      background-color: #007bff;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .pagination span {
+      margin: 0 10px;
+    }
+
+    @media (max-width: 768px) {
+      table, thead, tbody, th, td, tr {
+        display: block;
+      }
+
+      th, td {
+        padding: 10px;
+        border-bottom: 1px solid #eee;
+      }
+
+      td {
+        text-align: right;
+        position: relative;
+        padding-left: 50%;
+      }
+
+      td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        font-weight: bold;
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Product Catalog</h1>
+  <table id="productTable">
+    <thead>
+      <tr>
+        <th>Image</th>
+        <th>Product Name</th>
+        <th>Price (INR ₹)</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <div class="pagination">
+    <button onclick="prevPage()">Previous</button>
+    <span id="pageInfo">Page 1</span>
+    <button onclick="nextPage()">Next</button>
+  </div>
+
+  <script>
+    const products = [
+      { name: "Wireless Headphones", price: "₹7,999", desc: "Noise-cancelling over-ear headphones.", img: "https://via.placeholder.com/80" },
+      { name: "Smartwatch", price: "₹12,999", desc: "Fitness tracking smartwatch.", img: "https://via.placeholder.com/80" },
+      { name: "Gaming Mouse", price: "₹2,499", desc: "Ergonomic gaming mouse.", img: "https://via.placeholder.com/80" },
+      { name: "Laptop Stand", price: "₹1,999", desc: "Adjustable aluminium stand.", img: "https://via.placeholder.com/80" },
+      { name: "Bluetooth Speaker", price: "₹3,299", desc: "Portable wireless speaker.", img: "https://via.placeholder.com/80" },
+      { name: "USB-C Hub", price: "₹1,499", desc: "Multiport adapter with HDMI.", img: "https://via.placeholder.com/80" },
+      { name: "Webcam", price: "₹4,499", desc: "Full HD 1080p webcam.", img: "https://via.placeholder.com/80" },
+      { name: "Wireless Charger", price: "₹1,199", desc: "Fast charging pad.", img: "https://via.placeholder.com/80" },
+      { name: "Mechanical Keyboard", price: "₹5,999", desc: "RGB mechanical keyboard.", img: "https://via.placeholder.com/80" },
+      { name: "Noise Cancelling Mic", price: "₹2,899", desc: "Clear voice capture mic.", img: "https://via.placeholder.com/80" },
+      { name: "Tablet Stand", price: "₹999", desc: "Foldable universal stand.", img: "https://via.placeholder.com/80" },
+      { name: "Phone Holder", price: "₹699", desc: "360° adjustable mount.", img: "https://via.placeholder.com/80" }
+    ];
+
+    const rowsPerPage = 10;
+    let currentPage = 1;
+
+    function displayTable() {
+      const tbody = document.querySelector("#productTable tbody");
+      tbody.innerHTML = "";
+
+      const start = (currentPage - 1) * rowsPerPage;
+      const end = start + rowsPerPage;
+      const pageProducts = products.slice(start, end);
+
+      for (let p of pageProducts) {
+        const row = `
+          <tr>
+            <td data-label="Image"><img src="${p.img}" alt="${p.name}"></td>
+            <td data-label="Product Name">${p.name}</td>
+            <td data-label="Price">${p.price}</td>
+            <td data-label="Description">${p.desc}</td>
+          </tr>
+        `;
+        tbody.innerHTML += row;
+      }
+
+      document.getElementById("pageInfo").textContent = `Page ${currentPage} of ${Math.ceil(products.length / rowsPerPage)}`;
+    }
+
+    function prevPage() {
+      if (currentPage > 1) {
+        currentPage--;
+        displayTable();
+      }
+    }
+
+    function nextPage() {
+      if (currentPage < Math.ceil(products.length / rowsPerPage)) {
+        currentPage++;
+        displayTable();
+      }
+    }
+
+    displayTable();
+  </script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Product Catalog</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      margin: 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f4f4f4;
+    }
+
+    img {
+      max-width: 100px;
+      height: auto;
+    }
+
+    .pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    @media screen and (max-width: 600px) {
+      table, thead, tbody, th, td, tr {
+        display: block;
+      }
+
+      td {
+        margin-bottom: 10px;
+        border: none;
+        border-bottom: 1px solid #ddd;
+      }
+
+      th {
+        display: none;
+      }
+
+      td img {
+        display: block;
+        margin: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h2>Product Catalog</h2>
+  <table id="productTable">
+    <thead>
+      <tr>
+        <th>Image</th>
+        <th>Product Name</th>
+        <th>Price (INR ₹)</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
+
+  <div class="pagination">
+    <button onclick="prevPage()" id="prevBtn">Previous</button>
+    <span id="pageInfo">Page 1 of 1</span>
+    <button onclick="nextPage()" id="nextBtn">Next</button>
+  </div>
+
+  <script>
+    const products = [
+      {
+        name: "Wireless Headphones",
+        price: "₹7,999",
+        desc: "Noise-cancelling over-ear headphones.",
+        img: "https://via.placeholder.com/100?text=Headphones"
+      },
+      {
+        name: "Smartwatch",
+        price: "₹12,999",
+        desc: "Fitness tracking smartwatch.",
+        img: "https://via.placeholder.com/100?text=Smartwatch"
+      },
+      {
+        name: "Gaming Mouse",
+        price: "₹2,499",
+        desc: "Ergonomic gaming mouse.",
+        img: "https://via.placeholder.com/100?text=Mouse"
+      },
+      {
+        name: "Laptop Stand",
+        price: "₹1,999",
+        desc: "Adjustable aluminium stand.",
+        img: "https://via.placeholder.com/100?text=Stand"
+      },
+      // Add more products as needed...
+    ];
+
+    const rowsPerPage = 2; // Change this to 10 for real use
+    let currentPage = 1;
+    const totalPages = Math.ceil(products.length / rowsPerPage);
+
+    function renderTable() {
+      const tableBody = document.getElementById("tableBody");
+      tableBody.innerHTML = "";
+
+      const start = (currentPage - 1) * rowsPerPage;
+      const end = start + rowsPerPage;
+      const pageProducts = products.slice(start, end);
+
+      pageProducts.forEach(p => {
+        const row = `<tr>
+          <td><img src="${p.img}" alt="${p.name}"></td>
+          <td>${p.name}</td>
+          <td>${p.price}</td>
+          <td>${p.desc}</td>
+        </tr>`;
+        tableBody.innerHTML += row;
+      });
+
+      document.getElementById("pageInfo").textContent = `Page ${currentPage} of ${totalPages}`;
+      document.getElementById("prevBtn").disabled = currentPage === 1;
+      document.getElementById("nextBtn").disabled = currentPage === totalPages;
+    }
+
+    function prevPage() {
+      if (currentPage > 1) {
+        currentPage--;
+        renderTable();
+      }
+    }
+
+    function nextPage() {
+      if (currentPage < totalPages) {
+        currentPage++;
+        renderTable();
+      }
+    }
+
+    renderTable();
+  </script>
+</body>
+</html>

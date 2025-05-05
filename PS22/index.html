@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PICT Mobile Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- jQuery Mobile CSS -->
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <!-- jQuery Mobile JS -->
+  <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+
+<!-- Home Page -->
+<div data-role="page" id="home">
+  <div data-role="header">
+    <h1>PICT</h1>
+    <div data-role="navbar">
+      <ul>
+        <li><a href="#home" class="ui-btn-active">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#courses">Courses</a></li>
+        <li><a href="#departments">Departments</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div data-role="main" class="ui-content">
+    <h2>Welcome to PICT</h2>
+    <p>Pune Institute of Computer Technology (PICT) is one of the leading engineering colleges in India.</p>
+  </div>
+</div>
+
+<!-- About Us Page -->
+<div data-role="page" id="about" data-transition="slide">
+  <div data-role="header">
+    <h1>About Us</h1>
+    <a href="#home" data-icon="home" data-iconpos="notext">Home</a>
+  </div>
+
+  <div data-role="main" class="ui-content">
+    <p>Established in 1983, PICT has a rich history of excellence in technical education and innovation.</p>
+  </div>
+</div>
+
+<!-- Courses Page -->
+<div data-role="page" id="courses" data-transition="slide">
+  <div data-role="header">
+    <h1>Courses Offered</h1>
+    <a href="#home" data-icon="home" data-iconpos="notext">Home</a>
+  </div>
+
+  <div data-role="main" class="ui-content">
+    <div data-role="collapsible">
+      <h4>Undergraduate Programs</h4>
+      <ul>
+        <li>B.E. in Computer Engineering</li>
+        <li>B.E. in Electronics and Telecommunication</li>
+        <li>B.E. in Information Technology</li>
+      </ul>
+    </div>
+    <div data-role="collapsible">
+      <h4>Postgraduate Programs</h4>
+      <ul>
+        <li>M.E. in Computer Engineering</li>
+        <li>M.E. in Signal Processing</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Departments Page -->
+<div data-role="page" id="departments" data-transition="slide">
+  <div data-role="header">
+    <h1>Departments</h1>
+    <a href="#home" data-icon="home" data-iconpos="notext">Home</a>
+  </div>
+
+  <div data-role="main" class="ui-content">
+    <ul data-role="listview">
+      <li>Computer Engineering</li>
+      <li>Electronics & Telecommunication</li>
+      <li>Information Technology</li>
+      <li>Applied Sciences</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Contact Page -->
+<div data-role="page" id="contact" data-transition="slide">
+  <div data-role="header">
+    <h1>Contact Us</h1>
+    <a href="#home" data-icon="home" data-iconpos="notext">Home</a>
+  </div>
+
+  <div data-role="main" class="ui-content">
+    <p><strong>Address:</strong><br>Pune Institute of Computer Technology,<br>Survey No. 27, Dhankawadi,<br>Pune - 411043</p>
+    <p><strong>Email:</strong> pict@pict.edu</p>
+    <p><strong>Phone:</strong> +91 20 24371101</p>
+  </div>
+</div>
+
+</body>
+</html>

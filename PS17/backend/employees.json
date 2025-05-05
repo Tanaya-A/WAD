@@ -1,0 +1,27 @@
+[
+    {
+      "id": 1,
+      "name": "Alice Johnson",
+      "designation": "Software Engineer",
+      "department": "Development",
+      "salary": 85000,
+      "image": "https://randomuser.me/api/portraits/women/1.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Bob Smith",
+      "designation": "Project Manager",
+      "department": "Management",
+      "salary": 105000,
+      "image": "https://randomuser.me/api/portraits/men/2.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Jon Snow",
+        "designation": "Project Manager",
+        "department": "Management",
+        "salary": 100000,
+        "image": "https://randomuser.me/api/portraits/men/2.jpg"
+      }
+  ]
+  

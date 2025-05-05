@@ -1,0 +1,21 @@
+[
+    {
+      "id": 1,
+      "name": "Sourdough Bread",
+      "price": 5.99,
+      "image": "sourdough.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Croissant",
+      "price": 3.99,
+      "image": "croissant.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Baguette",
+      "price": 4.49,
+      "image": "baguette.jpg"
+    }
+  ]
+  

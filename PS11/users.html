@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Users</title>
+</head>
+<body>
+  <h2>Registered Users</h2>
+  <div id="userList"></div>
+
+  <script>
+    const users = JSON.parse(localStorage.getItem('users') || '[]');
+    const listDiv = document.getElementById('userList');
+    if (users.length === 0) {
+      listDiv.innerHTML = "No users registered.";
+    } else {
+      users.forEach(user => {
+        listDiv.innerHTML += `<p><strong>${user.name}</strong> - ${user.email}, ${user.city}</p>`;
+      });
+    }
+  </script>
+</body>
+</html>
+
